@@ -34,13 +34,13 @@ public class Player {
         for(int i = 0; i < charList.length; i++) {
             System.out.println("CharacterId: " + charList[i].getCharID() +
                     " | Character name: " + charList[i].getCharName() +
-                    " | Attributes; Damage: " + charList[i].getDamage() +
+                    " | Attributes- Damage: " + charList[i].getDamage() +
                     " Health: " + charList[i].getHealth() +
                     " Money: " + charList[i].getMoney());
         }
         boolean selectedTrue;
         do {
-            System.out.print("Let's select the character (write character id: ");
+            System.out.print("Let's select the character (write character id): ");
             int selected = sc.nextInt();
             switch (selected) {
                 case 1:
@@ -65,7 +65,7 @@ public class Player {
     }
 
     public void printInfo() {
-        System.out.println("that is your character's attributes: ");
+        System.out.println("That is your character's attributes: ");
         System.out.println("Name: " + this.getPlayerName() +
                 "\nCharacter: " + character.getCharName() +
                 "\nDamage: " + character.getDamage() +

@@ -11,10 +11,15 @@ public class Game {
         String playerName = sc.nextLine();
 
         Player player = new Player(playerName);
-        System.out.println("Hi " + player.getPlayerName() + ", let's go on an adventure");
-        System.out.println("You will win the game when you collect food, water and wood.");
+        System.out.println("Hi " + player.getPlayerName() + ", let's go on an adventure!");
+        System.out.println("You will win the game when you collect food, water and wood." +
+                "\nYou have to go to 4 different area in the map and collect items." +
+                "\nThere is a store in the map where you can strengthen yourself, you can go there and buy things whenever you want" +
+                "\nAnd there is a home in the map, when you go to your home your health will be full.\n");
 
+        System.out.println("-------------------- Characters --------------------");
         player.selectChar();
+
         player.printInfo();
 
     }
