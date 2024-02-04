@@ -7,6 +7,7 @@ public abstract class Characters {
     private int armor;
     private int health;
     private int money;
+    private int firstHealth;
     private Inventory inventory;
 
     public Characters(String charName, int charID, int damage,int armor ,int health, int money) {
@@ -16,6 +17,7 @@ public abstract class Characters {
         this.armor = armor;
         this.health = health;
         this.money = money;
+        this.firstHealth = health;
     }
 
     // CHAR METHODS
@@ -55,6 +57,13 @@ public abstract class Characters {
             health = 0;
         }
         this.health = health;
+    }
+
+    public int getFirstHealth() {
+        return firstHealth;
+    }
+    public void setFirstHealth(int firstHealth) {
+        this.firstHealth = firstHealth;
     }
 
     public int getMoney() {

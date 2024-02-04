@@ -7,6 +7,8 @@ public class Player {
     private String playerName;
     private Characters character;
     private Location location;
+    public boolean isExit = false;
+
     private Scanner sc = new Scanner(System.in);
 
     public Player(String playerName) {
@@ -73,6 +75,45 @@ public class Player {
                 "\nMoney: " + character.getMoney());
     }
     public void selectLocation() {
-        System.out.println("selecting location");
+        do {
+            System.out.println("-----------------------------------------------");
+            System.out.println("Select the location you want to go: (write location id)");
+            System.out.println("1 - Home\n2 - Shop\n3 - Cave\n4 - Forest\n5 - Mine\n6 - River\n0 - Exit");
+            int choice = sc.nextInt();
+            switch (choice) {
+                case 0:
+                    isExit = true;
+                    break;
+                case 1:
+                    this.location = new Home(this);
+                    break;
+                case 2:
+                    // stuff
+                case 3:
+                    this.location = new Cave(this);
+                    break;
+                case 4:
+                    this.location = new Forest(this);
+                    break;
+                case 5:
+                    //this.location = new Mine(this);
+                    break;
+                case 6:
+                    this.location = new River(this);
+                    break;
+                default:
+                    System.out.println("The system automatically takes you home.");
+                    this.location = new Home(this);
+                    break;
+            }
+            if(isExit) {
+                System.out.println("See you later.");
+                break;
+            }
+
+            // where we need to write query to check if the game is over or not
+
+        } while (location.onLocation());
+
     }
 }

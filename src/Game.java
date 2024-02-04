@@ -19,8 +19,8 @@ public class Game {
 
         System.out.println("-------------------- Characters --------------------");
         player.selectChar();
-
         player.printInfo();
 
+        player.selectLocation();
     }
 }
