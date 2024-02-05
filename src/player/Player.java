@@ -75,10 +75,11 @@ public class Player {
                 "\nMoney: " + character.getMoney());
     }
     public void selectLocation() {
+        //create inventory
         do {
             System.out.println("-----------------------------------------------");
             System.out.println("Select the location you want to go: (write location id)");
-            System.out.println("1 - Home\n2 - Shop\n3 - Cave\n4 - Forest\n5 - Mine\n6 - River\n0 - Exit");
+            System.out.println("1 - Home\n2 - Shop\n3 - Cave\n4 - Forest\n5 - River\n6 - Mine\n0 - Exit");
             int choice = sc.nextInt();
             switch (choice) {
                 case 0:
@@ -88,7 +89,8 @@ public class Player {
                     this.location = new Home(this);
                     break;
                 case 2:
-                    // stuff
+                    this.location = new Shop(this);
+                    break;
                 case 3:
                     this.location = new Cave(this);
                     break;
@@ -96,10 +98,10 @@ public class Player {
                     this.location = new Forest(this);
                     break;
                 case 5:
-                    //this.location = new Mine(this);
+                    this.location = new River(this);
                     break;
                 case 6:
-                    this.location = new River(this);
+                    //this.location = new Mine(this);
                     break;
                 default:
                     System.out.println("The system automatically takes you home.");

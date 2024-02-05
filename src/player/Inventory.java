@@ -1,4 +1,7 @@
 package player;
 
-public class Inventory {
+import items.*;
+
+public class Inventory{
+
 }
