@@ -16,6 +16,7 @@ public class Shop extends NormalLoc{
     @Override
     public boolean onLocation() {
         System.out.println("Welcome to shop.");
+        System.out.println("Your money is: " + this.getPlayer().getCharacter().getMoney());
         menu();
         return true;
     }
@@ -63,7 +64,7 @@ public class Shop extends NormalLoc{
             selectedWeaponID = sc.nextInt();
         }
         if (selectedWeaponID == 0) {
-           System.out.println("Main menu");
+           System.out.println("MAP");
         }
         else {
             selectedWeapon = Weapon.getWeaponByID(selectedWeaponID);
@@ -80,8 +81,8 @@ public class Shop extends NormalLoc{
                     // item add inventory
                     this.getPlayer().getInventory().setWeapon(selectedWeapon);
                     System.out.println("Your new weapon is: " + this.getPlayer().getInventory().getWeapon().getItemName());
-                    this.getPlayer().getCharacter().setDamage(this.getPlayer().getCharacter().getDamage() + this.getPlayer().getInventory().getWeapon().getWeaponDamage());
-                    System.out.println("Your new damage: " + this.getPlayer().getCharacter().getDamage());
+                    this.getPlayer().getCharacter().setTotalDamage(this.getPlayer().getCharacter().getDamage() + this.getPlayer().getInventory().getWeapon().getWeaponDamage());
+                    System.out.println("Your new damage: " + this.getPlayer().getCharacter().getTotalDamage());
                 }
             }
             menu();
@@ -106,7 +107,7 @@ public class Shop extends NormalLoc{
             selectedArmorID = sc.nextInt();
         }
         if(selectedArmorID == 0) {
-            System.out.println("Main menu");
+                System.out.println("MAP");
         }
         else {
             selectedArmor = Armor.getArmorByID(selectedArmorID);

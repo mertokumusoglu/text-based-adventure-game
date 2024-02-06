@@ -11,7 +11,7 @@ public class Forest extends BattleLoc{
     @Override
     public boolean onLocation() {
         System.out.println("You are in the forest with " + this.getObstacle().getObstacleName());
-        //battle
+        fight();
         return true;
     }
 }

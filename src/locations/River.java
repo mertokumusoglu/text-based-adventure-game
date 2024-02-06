@@ -11,9 +11,7 @@ public class River extends BattleLoc{
     @Override
     public boolean onLocation() {
         System.out.println("You are in the river with " + this.getObstacle().getObstacleName());
-
-        //battle
-
+        fight();
         return true;
     }
 }

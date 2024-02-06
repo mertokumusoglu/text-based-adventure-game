@@ -10,10 +10,7 @@ public class Cave extends BattleLoc{
 
     @Override
     public boolean onLocation() {
-        System.out.println("You are in the cave with " + this.getObstacle().getObstacleName());
-
-        //battle
-
+        fight();
         return true;
     }
 }

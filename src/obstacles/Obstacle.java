@@ -6,6 +6,8 @@ public abstract class Obstacle {
     private int obstacleDamage;
     private int obstacleHealth;
     private int obstacleMoney;
+    private int obstacleBeginningHealth;
+    private int obstacleTotalDamage;
 
     public Obstacle(String obstacleName, int obstacleID, int obstacleDamage, int obstacleHealth, int obstacleMoney) {
         this.obstacleName = obstacleName;
@@ -13,6 +15,8 @@ public abstract class Obstacle {
         this.obstacleDamage = obstacleDamage;
         this.obstacleHealth = obstacleHealth;
         this.obstacleMoney = obstacleMoney;
+        this.obstacleBeginningHealth = obstacleHealth;
+        this.obstacleTotalDamage = obstacleDamage;
     }
 
     public String getObstacleName() {
@@ -48,5 +52,20 @@ public abstract class Obstacle {
     }
     public void setObstacleMoney(int obstacleMoney) {
         this.obstacleMoney = obstacleMoney;
+    }
+
+    public int getObstacleBeginningHealth() {
+        return obstacleBeginningHealth;
+    }
+    public void setObstacleBeginningHealth(int obstacleBeginningHealth) {
+        this.obstacleBeginningHealth = obstacleBeginningHealth;
+    }
+
+    public int getObstacleTotalDamage() {
+        return obstacleTotalDamage;
+    }
+
+    public void setObstacleTotalDamage(int obstacleTotalDamage) {
+        this.obstacleTotalDamage = obstacleTotalDamage;
     }
 }

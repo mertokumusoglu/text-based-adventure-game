@@ -2,6 +2,7 @@ package player;
 
 import items.Armor;
 import items.Weapon;
+
 import locations.*;
 import java.util.Scanner;
 
@@ -85,9 +86,14 @@ public class Player {
     public void selectLocation() {
         //create inventory
         do {
+            if(isExit) {
+                System.out.println("See you later.");
+                break;
+            }
+
             System.out.println("-----------------------------------------------");
             System.out.println("Select the location you want to go: (write location id)");
-            System.out.println("1 - Home\n2 - Shop\n3 - Cave\n4 - Forest\n5 - River\n0 - Exit");
+            System.out.println("1 - Home\n2 - Shop\n3 - Cave (food)\n4 - Forest (wood)\n5 - River (water)\n0 - Exit");
             int choice = sc.nextInt();
             switch (choice) {
                 case 0:
@@ -95,6 +101,10 @@ public class Player {
                     break;
                 case 1:
                     this.location = new Home(this);
+                    if(this.getInventory().isFood() && this.getInventory().isWater() && this.getInventory().isWood()) {
+                        System.out.println("You collect all items and win the game");
+                        isExit = true;
+                    }
                     break;
                 case 2:
                     this.location = new Shop(this);
@@ -113,14 +123,13 @@ public class Player {
                     this.location = new Home(this);
                     break;
             }
+
             if(isExit) {
                 System.out.println("See you later.");
                 break;
             }
-
             // where we need to write query to check if the game is over or not
 
         } while (location.onLocation());
-
     }
 }
