@@ -8,7 +8,6 @@ public abstract class Characters {
     private int health;
     private int money;
     private int firstHealth;
-    private Inventory inventory;
 
     public Characters(String charName, int charID, int damage,int armor ,int health, int money) {
         this.charName = charName;

@@ -1,5 +1,7 @@
 package player;
 
+import items.Armor;
+import items.Weapon;
 import locations.*;
 import java.util.Scanner;
 
@@ -7,12 +9,14 @@ public class Player {
     private String playerName;
     private Characters character;
     private Location location;
+    private Inventory inventory;
     public boolean isExit = false;
 
     private Scanner sc = new Scanner(System.in);
 
     public Player(String playerName) {
         this.playerName = playerName;
+        this.inventory = new Inventory();
     }
 
     public String getPlayerName() {
@@ -29,6 +33,10 @@ public class Player {
 
     public Characters getCharacter() {
         return this.character;
+    }
+
+    public Inventory getInventory() {
+        return inventory;
     }
 
     public void selectChar() {
@@ -79,7 +87,7 @@ public class Player {
         do {
             System.out.println("-----------------------------------------------");
             System.out.println("Select the location you want to go: (write location id)");
-            System.out.println("1 - Home\n2 - Shop\n3 - Cave\n4 - Forest\n5 - River\n6 - Mine\n0 - Exit");
+            System.out.println("1 - Home\n2 - Shop\n3 - Cave\n4 - Forest\n5 - River\n0 - Exit");
             int choice = sc.nextInt();
             switch (choice) {
                 case 0:
@@ -99,9 +107,6 @@ public class Player {
                     break;
                 case 5:
                     this.location = new River(this);
-                    break;
-                case 6:
-                    //this.location = new Mine(this);
                     break;
                 default:
                     System.out.println("The system automatically takes you home.");
