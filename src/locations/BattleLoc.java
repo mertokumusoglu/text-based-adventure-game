@@ -62,8 +62,13 @@ public abstract class BattleLoc extends Location{
                     System.out.println("if exist, Another " + this.obstacle.getObstacleName());
                     break;
                 }
+                if(this.getPlayer().getCharacter().getHealth() > 0) {
                 this.getPlayer().getCharacter().setMoney(this.getPlayer().getCharacter().getMoney() + this.obstacle.getObstacleMoney());
                 System.out.println("You killed 1 " + this.obstacle.getObstacleName() + ". Your new money is: " + this.getPlayer().getCharacter().getMoney());
+                }
+            }
+            if(this.getPlayer().getCharacter().getHealth() > 0) {
+            this.getPlayer().printInfo();
             }
             while (this.getPlayer().getCharacter().getHealth() > 0) {
                 System.out.println("You kill all the " + this.obstacle.getObstacleName()+ "s");

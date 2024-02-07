@@ -93,7 +93,7 @@ public class Player {
 
             System.out.println("-----------------------------------------------");
             System.out.println("Select the location you want to go: (write location id)");
-            System.out.println("1 - Home\n2 - Shop\n3 - Cave (food)\n4 - Forest (wood)\n5 - River (water)\n0 - Exit");
+            System.out.println("1 - Home\n2 - Shop\n3 - Cave! (food)\n4 - Forest! (wood)\n5 - River! (water)\n0 - Exit");
             int choice = sc.nextInt();
             switch (choice) {
                 case 0:
@@ -128,7 +128,6 @@ public class Player {
                 System.out.println("See you later.");
                 break;
             }
-            // where we need to write query to check if the game is over or not
 
         } while (location.onLocation());
     }
