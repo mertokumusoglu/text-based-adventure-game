@@ -1,6 +1,9 @@
 # Text Based Adventure Game
 Adventure game made with Java
 
+## UML Class Diagram
+![Class Diagram](./UML.png)
+
 ## Purpose of the game
 Collect all items from monsters at battle locations and return home
 
